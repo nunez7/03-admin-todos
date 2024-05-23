@@ -1,6 +1,6 @@
 import prisma from '@/lib/prisma';
 import { Todo } from '@prisma/client';
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 import * as yup from 'yup';
 
 interface Segments{
@@ -51,7 +51,7 @@ export async function PUT(request: Request, {params}: Segments) {
 export async function DELETE(request: Request, {params}: Segments) { 
     const {id} = params;
    try {
-        const todo = await prisma.todo.delete({where:{id: id}});
+        await prisma.todo.delete({where:{id: id}});
         return NextResponse.json({message: `TODO con ID ${id} eliminado`})
    } catch (error) {
         return NextResponse.json({message: 'TODO con ID no existe'}, {status: 400})

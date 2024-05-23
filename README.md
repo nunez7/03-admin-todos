@@ -5,9 +5,14 @@ Pasos para levantar la app en desarrollo
 ```
 docker compose up -d
 ```
-2. Renombrar el .env.template a .env 
-3. Reemplazar las vars de configuración
-4. Ejecutar [localhost:3000/api/seed] para cread la DB con datos
+2. Crear una copia del .env.template y renombrarlo a .env 
+3. Reemplazar las vars de configuración (variables de entorno)
+4. Ejecutar ``` npm install ```
+5. Ejecutar ``` npm run dev ```
+6. Ejecutar comandos de prisma:
+    - npx prisma migrate dev
+    - npx prisma generate
+7. Crear la BD local, ejecutando el endpoint [localhost:3000/api/seed] para cread la DB con datos
 
 # Prisma commands
 ```
