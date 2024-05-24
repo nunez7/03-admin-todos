@@ -16,11 +16,16 @@ export const NewTodo = () => {
 
     console.log("Form submitted: ", description);
 
-    const save = await todosApi.createT(description);
+    const save = await todosApi.createdTodo(description);
     console.log(save);
     setDescription('');
     router.refresh();
 
+  }
+
+  const deleteCompleted = async() =>{
+    await todosApi.deletedTodos();
+    router.refresh();
   }
 
   return (

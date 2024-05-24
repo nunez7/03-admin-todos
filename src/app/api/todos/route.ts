@@ -25,6 +25,15 @@ const postSchema = yup.object({
     complete: yup.boolean().optional().default(false), //! TODO Mostrar algo interesante
 });
 
+export async function DELETE(request: Request) { 
+    try {
+        const todo = await prisma.todo.deleteMany({where: {complete: true}});
+        return NextResponse.json(todo);
+    } catch (error) {
+        return NextResponse.json(error, {status: 400});
+    }
+}
+
 export async function POST(request: Request) { 
     try {
         const {complete, description} = await postSchema.validate(await request.json()) ;

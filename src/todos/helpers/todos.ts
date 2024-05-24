@@ -18,7 +18,7 @@ export const updateTodo = async(id: string, complete: boolean): Promise<Todo> =>
 
 }
 
-export const createT = async(description: string): Promise<Todo> =>{
+export const createdTodo = async(description: string): Promise<Todo> =>{
 
     const body = {description};
 
@@ -34,4 +34,15 @@ export const createT = async(description: string): Promise<Todo> =>{
 
     return todo;
 
+}
+
+export const deletedTodos = async(): Promise<boolean> =>{
+    await fetch(`/api/todos`, {
+        method: 'DELETE',
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
+
+    return true;
 }
