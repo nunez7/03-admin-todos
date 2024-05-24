@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { CiBookmarkCheck, CiLogout } from 'react-icons/ci';
 import { SidebarItem } from './SidebarItem';
-import { IoCalendarOutline, IoCheckboxOutline } from 'react-icons/io5';
+import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from 'react-icons/io5';
 
 const sidebarItems = [
     {
@@ -14,6 +14,11 @@ const sidebarItems = [
         icon: <IoCheckboxOutline />,
         title: 'Rest TODOS',
         path: '/dashboard/rest-todos'
+      },
+      {
+        icon: <IoListOutline />,
+        title: 'Server Actions',
+        path: '/dashboard/server-todos'
       },
 ];
 
