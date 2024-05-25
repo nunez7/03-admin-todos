@@ -2,8 +2,8 @@
 
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
-import * as todosApi from '@/todos/helpers/todos';
 import { useRouter } from "next/navigation";
+import { addTodo, deleteCompleted } from "@/todos/actions/todo-actions";
 
 export const NewTodo = () => { 
   
@@ -16,16 +16,10 @@ export const NewTodo = () => {
 
     console.log("Form submitted: ", description);
 
-    const save = await todosApi.createdTodo(description);
-    console.log(save);
+    //const save = await todosApi.createdTodo(description);
+    addTodo(description);
     setDescription('');
-    router.refresh();
-
-  }
-
-  const deleteCompleted = async() =>{
-    await todosApi.deletedTodos();
-    router.refresh();
+    //router.refresh();
   }
 
   return (
