@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { CiBookmarkCheck, CiLogout } from 'react-icons/ci';
 import { SidebarItem } from './SidebarItem';
-import { IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from 'react-icons/io5';
+import { IoBasketballOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from 'react-icons/io5';
 
 const sidebarItems = [
     {
@@ -24,6 +24,11 @@ const sidebarItems = [
         icon: <IoCodeWorkingOutline />,
         title: 'Cookies',
         path: '/dashboard/cookies'
+      },
+      {
+        icon: <IoBasketballOutline />,
+        title: 'Productos',
+        path: '/dashboard/products'
       },
 ];
 
