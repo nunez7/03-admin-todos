@@ -3,11 +3,16 @@ import React from 'react';
 import { getServerSession } from "next-auth";
 import { CiBookmarkCheck, CiLogout } from 'react-icons/ci';
 import { SidebarItem } from './SidebarItem';
-import { IoBasketballOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from 'react-icons/io5';
+import { IoBasketballOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoPerson } from 'react-icons/io5';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 
 const sidebarItems = [
+    {
+      icon: <IoPerson />,
+      title: 'Perfil',
+      path: '/dashboard/profile'
+    },
     {
         icon: <IoCalendarOutline />,
         title: 'Dashboard',
@@ -32,7 +37,7 @@ const sidebarItems = [
         icon: <IoBasketballOutline />,
         title: 'Productos',
         path: '/dashboard/products'
-      },
+      }
 ];
 
 export const Sidebar = async() => {
