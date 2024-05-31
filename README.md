@@ -14,6 +14,10 @@ docker compose up -d
     - npx prisma generate
 7. Crear la BD local, ejecutando el endpoint [localhost:3000/api/seed] para cread la DB con datos
 
+## Nota: Usuario por defecto para app
+__Usuario:__ test1@google.com
+__Password:__ 12345678
+
 # Prisma commands
 ```
 npx prisma init
