@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { addTodo, deleteCompleted } from "@/todos/actions/todo-actions";
+import * as apiTodo from "@/todos/helpers/todos";
 
 export const NewTodo = () => { 
   
@@ -16,10 +17,10 @@ export const NewTodo = () => {
 
     console.log("Form submitted: ", description);
 
-    //const save = await todosApi.createdTodo(description);
-    addTodo(description);
+    await apiTodo.createdTodo(description);
+    //addTodo(description, user.id);
     setDescription('');
-    //router.refresh();
+    router.refresh();
   }
 
   return (
